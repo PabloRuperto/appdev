@@ -100,7 +100,7 @@ const ScrambledTitle: React.FC = () => {
     if (mounted && scramblerRef.current) {
       const phrases = [
         'Hello Paul!',
-        'THIS IS A REMINDER!',
+        'DAILY REMINDER!',
         'Don\'t be dumb.',
         'Go to school.',
         'And don\'t skip the gym!'
