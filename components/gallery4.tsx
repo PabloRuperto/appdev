@@ -21,7 +21,7 @@ export interface Gallery4Item {
 export interface Gallery4Props {
   title?: string;
   description?: string;
-  items: Gallery4Item[];
+  items?: Gallery4Item[];
 }
 
 const data: Gallery4Item[] = [
