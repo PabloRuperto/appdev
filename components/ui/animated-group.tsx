@@ -1,7 +1,9 @@
 'use client';
-import { ReactNode } from 'react';
+
+import React, { ReactNode } from 'react';
 import { motion, Variants } from 'motion/react';
-import React from 'react';
+
+/* ===================== TYPES ===================== */
 
 export type PresetType =
   | 'fade'
@@ -27,7 +29,10 @@ export type AnimatedGroupProps = {
   asChild?: React.ElementType;
 };
 
+/* ===================== DEFAULT VARIANTS ===================== */
+
 const defaultContainerVariants: Variants = {
+  hidden: {},
   visible: {
     transition: {
       staggerChildren: 0.1,
@@ -39,6 +44,8 @@ const defaultItemVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
+
+/* ===================== PRESETS ===================== */
 
 const presetVariants: Record<PresetType, Variants> = {
   fade: {},
@@ -95,39 +102,46 @@ const presetVariants: Record<PresetType, Variants> = {
   },
 };
 
-const addDefaultVariants = (variants: Variants) => ({
+/* ===================== HELPERS ===================== */
+
+const mergeWithDefaults = (variants: Variants): Variants => ({
   hidden: { ...defaultItemVariants.hidden, ...variants.hidden },
   visible: { ...defaultItemVariants.visible, ...variants.visible },
 });
+
+/* ===================== COMPONENT ===================== */
 
 function AnimatedGroup({
   children,
   className,
   variants,
   preset,
-  as = 'div',
-  asChild = 'div',
+  as: Component = 'div',
+  asChild: ChildComponent = 'div',
 }: AnimatedGroupProps) {
   const selectedVariants = {
-    item: addDefaultVariants(preset ? presetVariants[preset] : {}),
-    container: addDefaultVariants(defaultContainerVariants),
+    container: mergeWithDefaults(defaultContainerVariants),
+    item: mergeWithDefaults(preset ? presetVariants[preset] : {}),
   };
-  const containerVariants = variants?.container || selectedVariants.container;
-  const itemVariants = variants?.item || selectedVariants.item;
 
+  const containerVariants = variants?.container ?? selectedVariants.container;
+  const itemVariants = variants?.item ?? selectedVariants.item;
+
+  // ✅ CORRECT API (NO casting, NO create)
   const MotionComponent = React.useMemo(
-    () => motion.create(as as keyof JSX.IntrinsicElements),
-    [as]
+    () => motion(Component),
+    [Component]
   );
+
   const MotionChild = React.useMemo(
-    () => motion.create(asChild as keyof JSX.IntrinsicElements),
-    [asChild]
+    () => motion(ChildComponent),
+    [ChildComponent]
   );
 
   return (
     <MotionComponent
-      initial='hidden'
-      animate='visible'
+      initial="hidden"
+      animate="visible"
       variants={containerVariants}
       className={className}
     >
