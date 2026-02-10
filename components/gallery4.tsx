@@ -29,7 +29,7 @@ const data: Gallery4Item[] = [
     id: "about",
     title: "ABOUT ME",
     description: "",
-    href: "https://ui.shadcn.com",
+    href: "C:\Users\paulr\App Dev ACTIVITY\appdev\app\about\page.tsx",
     image:
       "https://images.unsplash.com/photo-1662125208190-b21030e953ee?q=80&w=689&auto=format&fit=crop",
   },
