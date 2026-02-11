@@ -6,7 +6,7 @@ import RotatingEarth from "@/components/wireframe-dotted-globe";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-black text-white">
+    <main className="relative min-h-screen bg-black text-white overscroll-none">
 
       {/* 🌧 Rain background */}
       <div className="absolute inset-0 z-0">
