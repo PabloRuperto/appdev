@@ -174,9 +174,10 @@ export default function RotatingEarth({
   return (
     <div className={`relative ${className}`}>
       <canvas ref={canvasRef} className="w-full h-auto" />
-      <div className="absolute bottom-4 left-80 text-xs text-white/60">
-        Drag to rotate • Scroll to zoom
-      </div>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs text-white/60 text-center">
+  Drag to rotate • Scroll to zoom
+</div>
+
     </div>
   )
 }

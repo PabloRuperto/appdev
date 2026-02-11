@@ -15,10 +15,16 @@ export default function AboutPage() {
      <h1 className="text-5xl font-bold">
     About Me
   </h1>
-
   <p className="text-xl font-semibold">
-    testing
+    N: Paul Mortel
   </p>
+  <p className="text-xl font-semibold">A: n/a</p>
+  <p className="text-xl font-semibold">S: Male</p>
+  <p className="text-xl font-semibold">L: Fairview QC</p>
+
+  <p><p><p>
+    TESTING
+  </p></p></p>
   </div>
 </div>
     

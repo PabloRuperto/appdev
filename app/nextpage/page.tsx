@@ -6,7 +6,7 @@ import RotatingEarth from "@/components/wireframe-dotted-globe";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-hidden">
+    <main className="relative min-h-screen bg-black text-white">
 
       {/* 🌧 Rain background */}
       <div className="absolute inset-0 z-0">
@@ -18,7 +18,6 @@ export default function AboutPage() {
   <DropdownComponent />
 </div>
 
-    
 
     </main>
   )
