@@ -10,7 +10,7 @@ const DropdownComponent = () => {
 
   const options = [
     { id: 1, label: "About Me", href: "/aboutme" },
-    { id: 2, label: "Instagram", href: "https://instagram.com/paulmortel", external: true },
+    { id: 2, label: "Instagram", href: "https://instagram.com/paulmortel" },
   ]
 
   return (
