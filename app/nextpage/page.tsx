@@ -5,6 +5,7 @@ import Link from "next/link";
 import { RevealLinks } from "@/components/reveal-links";
 import ShaderBackground from "@/components/shader-background";
 import RainingLetters from "@/components/MatrixRain";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
@@ -33,11 +34,23 @@ export default function AboutPage() {
         <RainingLetters />
       </div>
 
- 
-      <div className="relative z-20 flex items-center justify-center min-h-screen text-center">
-        <RevealLinks />
-      </div>
+      <div className="relative z-20 flex flex-col items-center pt-80 gap-2 text-center">
 
+        <div className="relative w-80 md:w-[400px] animate-[float_4s_ease-in-out_infinite]">
+  <img
+    src="/dance.webp"
+    className="rounded-xl w-full object-contain transition-all duration-300 hover:scale-105 hover:rotate-1 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+/>
+</div>
+          <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <RevealLinks />
+</motion.div>
+
+      </div>
     </main>
   );
 }

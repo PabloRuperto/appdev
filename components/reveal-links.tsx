@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const RevealLinks = () => {
   return (
-    <section className="grid place-content-center bg-transparent text-orange-500 px-8 py-24 w-full h-full">
+    <section className="grid place-content-center bg-transparent text-orange-500 drop-shadow-[0_0_20px_rgba(255,115,0,0.5)] px-8 py-24 w-full h-full">
       <FlipLink href="/aboutme">About Me</FlipLink>
       <FlipLink href="https://instagram.com/paulmortel">Instagram</FlipLink>
     </section>
