@@ -35,10 +35,7 @@ export default function AboutPage() {
       </div>
 
       <div className="relative z-20 flex flex-col items-center pt-80 gap-2 text-center">
-
-        <div className="relative w-80 md:w-[400px] animate-[float_4s_ease-in-out_infinite]">
-  
-</div>
+        
           <motion.div
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
